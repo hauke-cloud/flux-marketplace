@@ -1,3 +1,5 @@
+<img src="resources/img/logo.png" align="center" alt="flux-marketplace logo">
+
 # hauke.cloud Project
 
 <img src="https://github.com/hauke-cloud/.github/blob/d11756615820d138419a767fa7dd9a86abd5ad86/resources/img/logo-approved.png" align="right"
