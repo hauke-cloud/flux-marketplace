@@ -1,4 +1,4 @@
-<img src="resources/img/logo.png" align="center" alt="flux-marketplace logo">
+<img src="resources/img/logo.png" align="center" alt="flux-marketplace logo" with="50%" height="50%">
 
 # hauke.cloud Project
 
