@@ -8,7 +8,17 @@
 
 <img src="https://raw.githubusercontent.com/hauke-cloud/.github/main/resources/img/organisation-logo-small.png" align="right" alt="hauke.cloud logo" width="109" height="123">
 
-Infrastructure as Code for the hauke.cloud environments
+This repository provides all the Helm/OCI/Kustomize deployments as Flux
+manifests, which [hauke.cloud](https://hauke.cloud) also uses.
+
+- We keep the versions up-to-date
+- The deployments are tested in our development and staging environments
+- We set (in our opinion) good, generally valid default values
+- Of course, these deployments are somewhat tailored to our needs, but
+  we try to keep them as generally valid as possible
+- Missing components (such as secrets) are documented
+- Here you can find example deployments of applications we develop and maintain
+
 
 ## Table of Contents
 
