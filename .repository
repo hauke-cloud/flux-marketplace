@@ -1,0 +1,8 @@
+title: Flux Marketplace
+description: Infrastructure as Code for the hauke.cloud environments
+logo: resources/img/logo.png
+docker_image_registry: 
+docker_image: 
+docker_image_version: 
+helm_repository: 
+helm_chart: 
