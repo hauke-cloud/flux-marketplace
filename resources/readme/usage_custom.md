@@ -1,4 +1,6 @@
-## Step 1: Create a Flux v2 GitRepository
+To quickly install the demo app, simply follow these steps. Please note that this does not involve any changes/adaptations to your requirements.
+
+### Step 1: Create a Flux v2 GitRepository
 
 The GitRepository manifest will instruct Flux to track this GitHub repository.
 
@@ -23,7 +25,7 @@ The GitRepository manifest will instruct Flux to track this GitHub repository.
    kubectl apply -f flux-marketplace-gitrepository.yaml
    ```
 
-## Step 2: Create a Flux v2 Kustomization
+### Step 2: Create a Flux v2 Kustomization
 
 The Kustomization manifest will apply the resources found in the "apps/demo" directory of the repository.
 
@@ -51,7 +53,7 @@ The Kustomization manifest will apply the resources found in the "apps/demo" dir
    kubectl apply -f flux-marketplace-kustomization.yaml
    ```
 
-## Conclusion
+### Conclusion
 
 With these two manifests in place, Flux will now track the `hauke-cloud/flux-marketplace` repository and automatically apply any changes made to the `apps/demo` directory. Ensure that your `flux-system` namespace is properly set up and that your Flux installation is running correctly.
 
