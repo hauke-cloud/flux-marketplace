@@ -29,33 +29,74 @@ manifests, which [hauke.cloud](https://hauke.cloud) also uses.
 - [Contact](#contact)
 
 ## 🚀 Getting started
-To get started, you need to clone the repository containing this `README.md` file. Follow the steps below:
+Before you begin, ensure you have the following:
 
-### 1. Clone the repository
+- A Kubernetes cluster
+- [kubectl](https://kubernetes.io/docs/tasks/tools/) installed and configured to interact with your cluster
+- The [fluxv2](https://github.com/fluxcd/flux2) operator installed
+- Flux CLI installed [fluxv2-cli](https://github.com/fluxcd/flux2)
 
-Use the following command to clone the repository:
-
-```bash
-git clone https://github.com/hauke-cloud/flux-marketplace.git
-```
-
-### 2. Navigate to the repository directory
-
-Once the repository is cloned, navigate to the directory:
-
-```bash
-cd repository-name
-```
-
-### 3. Check the content
-
-```bash
-ls -la
-```
-
-This will display all the files and directories in the cloned repository.
 
 ## :wrench: Usage
+## Step 1: Create a Flux v2 GitRepository
+
+The GitRepository manifest will instruct Flux to track this GitHub repository.
+
+1. Create a new file named `flux-marketplace-gitrepository.yaml`:
+
+   ```yaml
+   apiVersion: source.toolkit.fluxcd.io/v1beta2
+   kind: GitRepository
+   metadata:
+     name: flux-marketplace
+     namespace: flux-system
+   spec:
+     interval: 1m
+     url: https://github.com/hauke-cloud/flux-marketplace
+     ref:
+       branch: main
+   ```
+
+2. Apply the manifest to your cluster:
+
+   ```bash
+   kubectl apply -f flux-marketplace-gitrepository.yaml
+   ```
+
+## Step 2: Create a Flux v2 Kustomization
+
+The Kustomization manifest will apply the resources found in the "apps/demo" directory of the repository.
+
+1. Create a new file named `flux-marketplace-kustomization.yaml`:
+
+   ```yaml
+   apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+   kind: Kustomization
+   metadata:
+     name: demo-apps
+     namespace: flux-system
+   spec:
+     interval: 10m
+     path: "./apps/demo"
+     prune: true
+     sourceRef:
+       kind: GitRepository
+       name: flux-marketplace
+     validation: client
+   ```
+
+2. Apply the manifest to your cluster:
+
+   ```bash
+   kubectl apply -f flux-marketplace-kustomization.yaml
+   ```
+
+## Conclusion
+
+With these two manifests in place, Flux will now track the `hauke-cloud/flux-marketplace` repository and automatically apply any changes made to the `apps/demo` directory. Ensure that your `flux-system` namespace is properly set up and that your Flux installation is running correctly.
+
+If you encounter any issues, feel free to open an issue or contact support.
+
 
 ## 📄 License
 
