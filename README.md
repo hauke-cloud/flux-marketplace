@@ -40,7 +40,6 @@ Before you begin, ensure you have the following:
 - Flux CLI installed [fluxv2-cli](https://github.com/fluxcd/flux2)
 
 
-## :wrench: Configuration
 
 ## :airplane: Usage
 To quickly install the demo app, simply follow these steps. Please note that this does not involve any changes/adaptations to your requirements.
