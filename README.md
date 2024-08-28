@@ -6,7 +6,7 @@
 
 # Flux Marketplace
 
-<div style="float: right;">
+<div style="float: right; clear: both;">
   <div align="right">
     <img src="https://raw.githubusercontent.com/hauke-cloud/.github/main/resources/img/organisation-logo-small.png" alt="hauke.cloud logo" width="109" height="123">
     <div style="margin-top: 10px;">
@@ -22,7 +22,6 @@
   </div>
 </div>
 
-<p>
 This repository provides all the Helm/OCI/Kustomize deployments as Flux
 manifests, which [hauke.cloud](https://hauke.cloud) also uses.
 
@@ -34,7 +33,6 @@ manifests, which [hauke.cloud](https://hauke.cloud) also uses.
 - Missing components (such as secrets) are documented
 - Here you can find example deployments of applications we develop and maintain
 
-</p>
 
 ## Table of Contents
 
