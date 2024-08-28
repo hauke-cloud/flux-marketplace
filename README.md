@@ -1,3 +1,6 @@
+<a href="https://hauke.cloud" target="_blank"><img src="https://img.shields.io/badge/home-hauke.cloud-brightgreen" alt="hauke.cloud" style="display: block;" /></a>
+<a href="https://github.com/hauke-cloud" target="_blank"><img src="https://img.shields.io/badge/github-hauke.cloud-blue" alt="hauke.cloud Github Organisation" style="display: block;" /></a>
+
 
 <p align="center">
   <img src="resources/img/logo.png" alt="repository logo" width="50%" height="50%">
@@ -6,11 +9,7 @@
 
 # Flux Marketplace
 
-<div align="right">
-  <a href="https://github.com/hauke-cloud" target="_blank"><img src="https://raw.githubusercontent.com/hauke-cloud/.github/main/resources/img/organisation-logo-small.png" alt="hauke.coud logo" width="109" height="123"></a>
-  <a href="https://hauke.cloud" target="_blank"><img src="https://img.shields.io/badge/home-hauke.cloud-brightgreen" alt="hauke.cloud" style="display: block;" /></a>
-  <a href="https://github.com/hauke-cloud" target="_blank"><img src="https://img.shields.io/badge/github-hauke.cloud-blue" alt="hauke.cloud Github Organisation" style="display: block;" /></a>
-</div>
+><img src="https://raw.githubusercontent.com/hauke-cloud/.github/main/resources/img/organisation-logo-small.png" alt="hauke.cloud logo" width="109" height="123" align="right">
 
 This repository provides all the Helm/OCI/Kustomize deployments as Flux
 manifests, which [hauke.cloud](https://hauke.cloud) also uses.
