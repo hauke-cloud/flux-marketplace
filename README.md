@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="resources/img/logo.png" alt="repository logo" width="50%" height="50%">
+  <img src="resources/img/logo.png" alt="repository logo" width="20%" height="20%">
 </p>
 
 
