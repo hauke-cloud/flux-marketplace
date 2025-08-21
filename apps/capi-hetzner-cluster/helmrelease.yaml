@@ -1,0 +1,16 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: capi-hetzner-cluster
+spec:
+  chart:
+    spec:
+      chart: capi-hetzner-cluster
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: hauke-cloud
+      version: 0.*
+  values: {}
+  interval: 5m0s
