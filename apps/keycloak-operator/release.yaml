@@ -6,7 +6,7 @@ metadata:
   namespace: flux-apps
 spec:
   interval: 5m
-  path: keycloak-operator.yaml
+  path: ./install
   prune: true
   sourceRef:
     kind: GitRepository
