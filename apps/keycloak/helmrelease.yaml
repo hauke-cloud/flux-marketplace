@@ -10,7 +10,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: hauke-hauke
+        name: hauke-cloud
       version: "*"
   targetNamespace: keycloak
   values: {}
