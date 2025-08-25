@@ -12,5 +12,6 @@ spec:
         kind: HelmRepository
         name: hauke-hauke
       version: "*"
+  targetNamespace: keycloak
   values: {}
   interval: 5m0s
