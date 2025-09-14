@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: mattermost
+      chart: mattermost-operator
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
