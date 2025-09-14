@@ -1,0 +1,17 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: mattermost
+spec:
+  chart:
+    spec:
+      chart: mattermost
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: mattermost
+      version: "*"
+  targetNamespace: mattermost
+  values: {}
+  interval: 5m0s
