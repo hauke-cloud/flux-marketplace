@@ -12,6 +12,6 @@ spec:
         kind: HelmRepository
         name: hauke-cloud
       version: "*"
-  targetNamespace: keycloak
+  targetNamespace: database
   values: {}
   interval: 5m0s
