@@ -12,6 +12,6 @@ spec:
         kind: HelmRepository
         name: hauke-cloud
       version: "*"
-  targetNamespace: mattermos
+  targetNamespace: mattermost
   values: {}
   interval: 5m0s
