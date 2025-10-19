@@ -1,0 +1,17 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: matrix
+spec:
+  chart:
+    spec:
+      chart: matrix-homeserver
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: hauke-cloud
+      version: "*"
+  targetNamespace: matrix
+  values: {}
+  interval: 5m0s
