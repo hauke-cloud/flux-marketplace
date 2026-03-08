@@ -16,9 +16,11 @@ spec:
   targetNamespace: longhorn-system
   values:
     defaultSettings:
-      defaultDataPath: /var/lib/longhorn
+      v2DataEngine: true
+      defaultDataPath: /dev/vg0
       defaultReplicaCount: 3
       storageMinimalAvailablePercentage: 10
+      createDefaultDiskLabeledNodes: false
     persistence:
       defaultClass: true
       defaultClassReplicaCount: 3
