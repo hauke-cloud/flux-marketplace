@@ -1,0 +1,34 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: longhorn
+spec:
+  chart:
+    spec:
+      chart: longhorn
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: longhorn
+      version: "*"
+  targetNamespace: longhorn-system
+  values:
+    defaultSettings:
+      defaultDataPath: /var/lib/longhorn
+      defaultReplicaCount: 3
+      storageMinimalAvailablePercentage: 10
+    persistence:
+      defaultClass: true
+      defaultClassReplicaCount: 3
+    longhornManager:
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+          effect: NoSchedule
+    longhornDriver:
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+          effect: NoSchedule
+  interval: 5m0s
