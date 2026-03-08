@@ -16,14 +16,19 @@ spec:
   targetNamespace: longhorn-system
   values:
     defaultSettings:
-      v2DataEngine: true
-      defaultDataPath: /dev/vg0
+      v1DataEngine: true
+      v2DataEngine: false
+      defaultDataPath: /var/lib/longhorn
       defaultReplicaCount: 3
       storageMinimalAvailablePercentage: 10
       createDefaultDiskLabeledNodes: false
     persistence:
-      defaultClass: true
+      defaultClass: false
       defaultClassReplicaCount: 3
+      dataEngine: v1
+      defaultDiskSelector:
+        enable: true
+        selector: "data"
     longhornManager:
       tolerations:
         - key: node-role.kubernetes.io/control-plane
