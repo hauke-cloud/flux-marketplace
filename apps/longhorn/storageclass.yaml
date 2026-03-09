@@ -16,8 +16,6 @@ parameters:
   fromBackup: ""
   fsType: "xfs"
   dataLocality: "best-effort"
-  diskSelector: "data"
-  nodeSelector: ""
 ---
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
@@ -34,5 +32,3 @@ parameters:
   fromBackup: ""
   fsType: "xfs"
   dataLocality: "best-effort"
-  diskSelector: "data"
-  nodeSelector: ""
