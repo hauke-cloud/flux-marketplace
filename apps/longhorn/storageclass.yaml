@@ -2,7 +2,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: local
+  name: shared
   namespace: longhorn-system
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
@@ -22,7 +22,7 @@ parameters:
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: local-single
+  name: shared-single-replica
   namespace: longhorn-system
 provisioner: driver.longhorn.io
 allowVolumeExpansion: true
