@@ -12,6 +12,5 @@ spec:
         kind: HelmRepository
         name: hauke-cloud
       version: "*"
-  targetNamespace: mosquitto
   values: {}
   interval: 5m0s
