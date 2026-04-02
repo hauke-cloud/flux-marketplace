@@ -32,3 +32,17 @@ parameters:
   fromBackup: ""
   fsType: "xfs"
   dataLocality: "best-effort"
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: shared-no-replica
+  namespace: longhorn-system
+provisioner: driver.longhorn.io
+allowVolumeExpansion: true
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+parameters:
+  fromBackup: ""
+  fsType: "xfs"
+  dataLocality: "best-effort"
