@@ -56,10 +56,15 @@ provisioner: driver.longhorn.io
 allowVolumeExpansion: true
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
-mountOptions:
+parameters:
   fromBackup: ""
   fsType: "xfs"
   dataLocality: "best-effort"
-  dir_mode: 0777
-  file_mode: 0777
-  gid: 1001
+mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=1001
+  - gid=1001
+  - mfsymlinks
+  - cache=strict
+  - actimeo=30
