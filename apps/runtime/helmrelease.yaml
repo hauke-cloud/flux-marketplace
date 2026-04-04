@@ -1,0 +1,20 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: runtime
+  namespace: runtime
+spec:
+  chart:
+    spec:
+      chart: hauke-cloud-runtime
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: hauke-cloud
+      version: "*"
+  valuesFrom:
+    - kind: ConfigMap
+      name: runtime-values
+      optional: true
+  interval: 5m0s
