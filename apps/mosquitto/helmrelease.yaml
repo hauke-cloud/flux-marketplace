@@ -12,5 +12,9 @@ spec:
         kind: HelmRepository
         name: hauke-cloud
       version: "*"
+  valuesFrom:
+    - kind: ConfigMap
+      name: mosquitto-values
+      optional: true
   values: {}
   interval: 5m0s
