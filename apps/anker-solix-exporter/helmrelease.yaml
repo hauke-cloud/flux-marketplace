@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: hauke-cloud
       version: "*"
-  targetNamespace: sensor-exporters
+  targetNamespace: anker
   values: {}
   valuesFrom:
     - kind: ConfigMap
