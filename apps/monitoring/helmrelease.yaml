@@ -14,4 +14,8 @@ spec:
       version: "*"
   targetNamespace: monitoring
   values: {}
+  valuesFrom:
+    - kind: ConfigMap
+      name: helm-values-monitoring
+      optional: true
   interval: 5m0s
