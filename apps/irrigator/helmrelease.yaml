@@ -1,0 +1,21 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: irrigator
+spec:
+  chart:
+    spec:
+      chart: irrigator
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: hauke-cloud
+      version: "*"
+  targetNamespace: mqtt
+  values: {}
+  valuesFrom:
+    - kind: ConfigMap
+      name: helm-values-irrigator
+      optional: true
+  interval: 5m0s
