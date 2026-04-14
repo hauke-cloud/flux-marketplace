@@ -1,0 +1,21 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: mqtt-sensor-exporter
+spec:
+  chart:
+    spec:
+      chart: mqtt-sensor-exporter
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: hauke-cloud
+      version: "*"
+  targetNamespace: mqtt
+  values: {}
+  valuesFrom:
+    - kind: ConfigMap
+      name: helm-values-mqtt-sensor-exporter
+      optional: true
+  interval: 5m0s
