@@ -1,0 +1,21 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: database-manager
+spec:
+  chart:
+    spec:
+      chart: database-manager
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: hauke-cloud
+      version: "*"
+  targetNamespace: mqtt
+  values: {}
+  valuesFrom:
+    - kind: ConfigMap
+      name: helm-values-database-manager
+      optional: true
+  interval: 5m0s

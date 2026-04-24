@@ -1,0 +1,21 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: mqtt-device-manager
+spec:
+  chart:
+    spec:
+      chart: mqtt-device-manager
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: hauke-cloud
+      version: "*"
+  targetNamespace: mqtt
+  values: {}
+  valuesFrom:
+    - kind: ConfigMap
+      name: helm-values-mqtt-device-manager
+      optional: true
+  interval: 5m0s
