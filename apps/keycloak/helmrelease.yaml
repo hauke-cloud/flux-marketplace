@@ -14,4 +14,8 @@ spec:
       version: "*"
   targetNamespace: keycloak
   values: {}
+  valuesFrom:
+    - kind: ConfigMap
+      name: keycloak-values
+      optional: true
   interval: 5m0s
