@@ -14,4 +14,8 @@ spec:
       version: "*"
   targetNamespace: matrix
   values: {}
+  valuesFrom:
+    - kind: ConfigMap
+      name: matrix-values
+      optional: true
   interval: 5m0s
