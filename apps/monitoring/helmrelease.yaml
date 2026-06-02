@@ -18,4 +18,7 @@ spec:
     - kind: ConfigMap
       name: helm-values-monitoring
       optional: true
+    - kind: ConfigMap
+      name: monitoring-values
+      optional: true
   interval: 5m0s
